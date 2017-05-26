@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--For Lollipop(API 21) and after -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?android:attr/colorControlHighlight">
+    <item android:id="@android:id/mask" android:drawable="@android:color/white"></item>
+    <!--Above line sets the effect with in the bounds-->
+</ripple>
+
+
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="@color/colorHighlight"></solid>
+        </shape>
+    </item>
+
+</selector>-->
+<!--you need to set clickable in "full_json_row" to work on this effect-->
+
+

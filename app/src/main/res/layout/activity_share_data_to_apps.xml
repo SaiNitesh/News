@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/shareDataFrame">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Enter Message to send"
+        android:id="@+id/shareDataEdit"
+        >
+
+        <requestFocus/>
+    </EditText>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendDataButton"
+        android:layout_below="@+id/shareDataEdit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="Send Data"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/shareDataButton"
+        android:layout_below="@+id/sendDataButton"
+        android:layout_marginTop="14dp"
+        android:text="Share Via"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/shareImageButton"
+        android:layout_alignBottom="@+id/shareDataButton"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="14dp"
+        android:text="Share Image Via"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/shareMultiImageButton"
+        android:layout_below="@+id/shareDataButton"
+        android:layout_marginTop="14dp"
+        android:text="Share Multi Image Via"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/shareMultiImageButton"
+        android:id="@+id/shareImageView"
+        android:src="@drawable/ic_real_madrid"
+        />
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/expanded_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/shareImageView"
+        android:visibility="invisible"
+        android:contentDescription="Hello" />
+
+</FrameLayout>

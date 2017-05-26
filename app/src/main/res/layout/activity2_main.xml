@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <!--android:scrollbarAlwaysDrawVerticalTrack="true"-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Take me to 1st activity" />
+
+        <TextView
+            android:id="@+id/showUname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="**Username**"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/showEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="**Email**"
+            android:textSize="30sp" />
+
+        <ListView
+            android:id="@+id/myFirstLView"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+        </ListView>
+        <!--ListView has inbuilt SCROLLVIEW-->
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/b21"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Floating_Actn_Btn" />
+
+            <Button
+                android:id="@+id/b22"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/b21"
+                android:layout_toRightOf="@+id/b21"
+                android:text="Parcelable" />
+
+            <Button
+                android:id="@+id/b23"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/b22"
+                android:layout_toRightOf="@+id/b22"
+                android:text="Swipe Layout" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/b24"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Image Swipe Layout" />
+
+            <Button
+                android:id="@+id/b25"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/b24"
+                android:text="RecyclerVire" />
+
+            <Button
+                android:id="@+id/b26"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/b25"
+                android:text="Dummy List View" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/b27"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Card View" />
+
+            <Button
+                android:id="@+id/b28"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/b27"
+                android:text="Shared Preferences" />
+
+            <Button
+                android:id="@+id/b29"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/b28"
+                android:text="Share Data" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/b30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Handler" />
+
+            <Button
+                android:id="@+id/b31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/b30"
+                android:text="Download Image" />
+
+            <Button
+                android:id="@+id/b32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/b31"
+                android:text="External Storage" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/b33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download PDF" />
+
+            <Button
+                android:id="@+id/b34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/b33"
+                android:text="PDF Render" />
+
+            <Button
+                android:id="@+id/b35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/b34"
+                android:text="Download Manag" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/b36"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download Demo" />
+
+            <Button
+                android:id="@+id/b37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/b36"
+                android:text="IBinder" />
+
+            <Button
+                android:id="@+id/b38"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/b37"
+                android:text="Web Page" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

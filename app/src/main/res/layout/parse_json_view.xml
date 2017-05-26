@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="name"
+        android:textSize="20sp"
+        android:id="@+id/name"
+        android:layout_alignParentTop="true"
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="City"
+        android:id="@+id/city"
+        android:layout_marginLeft="41dp"
+        android:layout_marginStart="27dp"
+        android:layout_alignBottom="@+id/name"
+        android:layout_toEndOf="@+id/name" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="House"
+        android:id="@+id/house"
+        android:layout_below="@+id/city"
+        android:layout_alignStart="@+id/city"
+        android:scrollHorizontally="true"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+
+</RelativeLayout>

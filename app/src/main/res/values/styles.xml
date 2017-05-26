@@ -1,0 +1,41 @@
+<resources>
+
+    <!-- Base application theme. --> <!--In below we changed to NoActionBar from ActionBar-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>
+        <!--The above statement should be included in draweble NOT in "drawable-v21" folder, in brief we are overriding the function-->
+        <item name="android:colorControlHighlight">@color/colorHighlight</item>
+        <!--in brief we are overriding the attribute "colorControlHighlight"-->
+
+
+    </style>
+
+
+    
+    <style name="AppTheme.CustomTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+    </style>
+
+    <style name="AppThemeBase" parent="Theme.AppCompat">
+        <!--<item name="android:background">@color/colorPrimaryDark</item>--> <!--this applys colors on title background and menu other options-->
+    </style>
+
+
+</resources>

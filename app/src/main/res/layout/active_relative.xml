@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/myLayout"
+    tools:context="news.nitesh.com.news.RelativeActivity">
+
+    <TextView
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="Email:"
+        android:textSize="22sp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/EmailLabel"
+        />
+
+    <!--android:layout_width="wrap_content" is different from "match_Parent"
+    match_Parent===> will cover the whole row
+    wrap_content===> will cover only the text, not the whole row
+    140dp==========> will cover until 140dp
+    -->
+
+    <EditText
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/EmailField"
+        android:layout_toRightOf="@+id/EmailLabel"/>
+
+    <TextView
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="Password:"
+        android:textSize="22sp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/EmailLabel"
+        android:id="@+id/passwordLabel"
+        />
+
+    <EditText
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/passwordField"
+        android:layout_toRightOf="@+id/passwordLabel"
+        android:layout_below="@+id/EmailField"
+        />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attachment"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/attachment"
+        android:layout_below="@id/passwordField"
+        />
+    <!--layout_centeHorizontal===>  aligns in center in horizontal-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="picture"
+        android:layout_toRightOf="@id/attachment"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/passwordField"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Email"
+        android:id="@+id/b3"
+        android:layout_below="@id/attachment"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Touch"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/touch1"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dynamic Button"
+        android:layout_toRightOf="@id/touch1"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/b5REL"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toast"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/passwordField"
+        android:onClick="firstMethod"/>
+
+    <!--layout_centevertical="true"-->
+
+    <!--android:onClick="firstMethod" ====> Here this event handling should not be in .XML, it should only have UI part
+     for this we used blow another button and method implimentation-->
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Toast,event handlr in java"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/b4"/>
+
+
+</RelativeLayout>

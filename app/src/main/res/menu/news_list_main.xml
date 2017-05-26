@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+     <item
+        android:id="@+id/menuSearch"
+        android:orderInCategory="200"
+        android:title="@string/next"
+         app:showAsAction="ifRoom|collapseActionView"
+         app:actionViewClass="android.support.v7.widget.SearchView"
+        android:icon="@drawable/ic_search"
+
+        />
+    <!--android.support.v7.widget.SearchView    for SearchView which is different from "android.widget.SearchView"-->
+
+    <!--collapseActionView attribute allows your SearchView to expand to take up the whole
+    action bar and collapse back down into a normal action bar item when not in use-->
+
+    <!--|collapseActionView  really need to work the "search" function on ActionMenu-->
+
+</menu>

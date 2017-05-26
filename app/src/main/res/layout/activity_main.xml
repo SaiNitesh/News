@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:id="@+id/linLayout"
+    tools:context="news.nitesh.com.news.MainActivity"
+    >
+
+    <!--<RelativeLayout
+     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_width="match_parent" ====> matchParent is for line under the field>
+    -->
+
+    <!--LinearLayout is different from RelativeLayout and their attributes,
+         here android:Orientation is important-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Hello World!" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="enter your name"
+        android:id="@+id/uname"
+        />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:gravity="top"
+        android:hint="enter your email"
+        android:id="@+id/mail"
+         />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Send Email(passing data to another page with intents)"
+        android:id="@+id/signIn"/>
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dynamic Button"
+        android:layout_toRightOf="@id/touch1"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/b5"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button_6"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/b6"/>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="idle"
+        android:layout_toRightOf="@id/b6"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/myText"/>
+    </ScrollView>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/mybrowser"
+        ></WebView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/urlText"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b7"
+        android:text="Enter"
+        android:layout_toRightOf="@id/urlText"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take me to 2nd activity"
+        android:id="@+id/b8"
+        />
+    <!-- Above button is for intent-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take me to CustomListView"
+        android:id="@+id/b9"
+        android:layout_toRightOf="@id/b8"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take me to NewsFeed"
+        android:id="@+id/b10"
+        android:layout_below="@+id/b8"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take me to JsonParse(need to fix)"
+        android:id="@+id/b11"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/b10"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="calculator"
+            android:id="@+id/b12"
+            android:layout_below="@+id/b14"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact details"
+            android:id="@+id/b13"
+            android:background="@drawable/tabselectedcolor"
+            android:layout_alignTop="@+id/b12"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MY NEWS"
+            android:id="@+id/b14"
+            android:layout_alignTop="@+id/b11"
+            android:layout_toEndOf="@+id/b11" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Json HTTP Parse Sample"
+            android:id="@+id/b15"
+            android:layout_below="@+id/b12"
+            android:layout_alignParentStart="true" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Json URL Parse FULL"
+            android:id="@+id/b16"
+            android:layout_below="@+id/b15"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gson URL Parse FULL"
+            android:id="@+id/b17"
+            android:layout_below="@+id/b13"
+            android:layout_toEndOf="@+id/b13" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nav Drawer"
+            android:id="@+id/b18"
+            android:layout_below="@+id/b15"
+            android:layout_toEndOf="@+id/b10" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spinner"
+            android:id="@+id/b19"
+            android:layout_alignBottom="@+id/b13"
+            android:layout_alignParentEnd="true" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,410 @@
+@@@
+for development purpose we can use LOG
+But for production, we use some alert box or something to User to see
+
+
+@shortcuts:
+
+ctrl+alt+l- reformat the code in file by deleting spaces
+
+
+@@ for Menu Bar
+
+1)Include, "drawer_app_bar_main" in XML file like in drawer_mai_nav.xml
+2)toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        add these two line in .java file
+-
+
+
+
+
+@@@@@ parcelable Image Bitmap
+private Drawable imageId;
+Bitmap bitmap = (Bitmap) im.readParcelable(getClass().getClassLoader());
+                  // Convert Bitmap to Drawable:
+                  imageId = new BitmapDrawable(bitmap);
+
+
+public String  name;
+ public GroupDetail detail;
+ public List itemList;
+
+ public void readFromParcel(Parcel in) {
+   name = in.readString();
+   detail = in.readParcelable(GroupDetail.class.getClassLoader());
+   if (itemList == null) {
+    itemList = new ArrayList();
+   }
+   in.readTypedList(itemList, Item.CREATOR);
+  }
+
+  public void writeToParcel(Parcel out, int flags) {
+    out.writeString(name);
+    out.writeParcelable(detail, flags);
+    out.writeTypedList(itemList);
+   }
+
+
+
+
+
+
+@@@Tabs:
+
+FragmentStateePagerAdapter - for more pages
+FragmentPagerAdapter - for lesser pages
+
+
+
+
+@@@ RecylcerView Vs ListView
+1.)ViewHolder is not available by default in ListView. We will be creating explicitly inside the getView(). RecyclerView has inbuilt Viewholder.
+
+2) RecyclerView
+
+The RecyclerView is a new ViewGroup that is prepared to render any adapter-based view in a similar way. It is supossed to be the successor of ListView and GridView, and it can be found in the  latest support-v7 version. The RecyclerView has been developed with extensibility in mind, so it is possible to create any kind of layout you can think of, but not without a little pain-in-the-ass dose. This is Android, so things are never easy.
+
+Reuses cells while scrolling up/down -
+	this is possible with implementing View Holder in the listView adapter, but it was an optional thing, while in the RecycleView it's the default way of writing adapter.
+Decouples list from its container -
+	so you can put list items easily at run time in the different containers (linearLayout, gridLayout) with setting LayoutManager.
+	mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+	mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+	//or
+	mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+Animates common list actions -
+	Animations are decoupled and delegated to ItemAnimator.There is more about RecyclerView, but I think these points are the main ones.
+
+
+
+
+
+
+@@@@android permissions:
+
+
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.VIBRATE" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+<uses-permission android:name="android.permission.READ_LOGS" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.READ_CONTACTS" />
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+<uses-permission
+    android:name="android.permission.UPDATE_DEVICE_STATS"
+    tools:ignore="ProtectedPermissions" />
+<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+<uses-permission android:name="android.intent.action.BATTERY_CHANGED" />
+<uses-permission
+    android:name="android.permission.INSTALL_PACKAGES"
+    tools:ignore="ProtectedPermissions" />
+
+
+@@@ LIFE-CYCLE
+
+Life-cyle has few methods,
+    why we need these methods ?
+    define how your app behaves
+    like- no downloads when the user is not looking at your app
+
+Android OS calls certain methods on your activity class to notify whether your app is running currently or not
+ guidelines:
+ 1) dont do heavy processing or network consuming opearations when user is currently away fro your app
+ 2) App should not crash when another app is started
+ 3) Dont lose the user progress or session data
+
+
+when the user opens the app, 3 methods will execute
+onCreate
+onStart()
+onResume()
+
+1) when you are using app1 and the opens the app2 or move to other activity(screen), apps1 immediately calls the
+    onPause() and     onStop() methods
+    ->when any dialog box opens on the top of screen, like it is "partially" blocking(clicking the button in dialog box,
+     the dialog will be removed and we will go back to our app screen) the back screen
+    , then
+    onPause() will be called
+    -> if something "fully" blocks the screen(clicking home button, which closes the (screen) or app), then
+    onPause() and
+    onStop() will be called
+
+2) when you press back and then go back to same app1 page, these methods will call immediately
+    onRestart()
+    onStart()
+    onResume()
+
+3) when you completly closes the app1(no backend running) then it calls
+    onDestroy()
+
+@@@@ContactDetails(detailsContact.xml,styles.xml)->Pop(pop_View.xml)
+
+
+@@@@@Code in ContactDetails:
+
+/*ContactDetailsBean editDetails = details.get(longClickedItemIndex);
+                Log.i("deat","@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+editDetails.toString());
+
+
+                Intent i= new Intent(ContactDetails.this, );
+                i.putExtra("image",editDetails.getImgaeUri().toString());
+                i.putExtra("name",editDetails.getuName());
+                i.putExtra("pwd", editDetails.getUPassword());
+
+                Log.i("argsU",editDetails.getImgaeUri().toString());
+
+                //i.putExtra("eDetails",editDetails);
+                //i.putExtra("dbHan",String.valueOf(dbHandler));
+
+                //startActivity(i);
+                startActivityForResult(i,2);
+
+*/
+
+                /*Intent i= new Intent(ContactDetails.this,Pop.class );
+                i.putExtra("reddy",String.valueOf(longClickedItemIndex));
+                startActivity(i);*/
+
+if(reqCode==2)
+        {
+            editDetails.setuName(data.getStringExtra("updName"));
+            editDetails.setuPassword(data.getStringExtra("updPwd"));
+            editDetails.setImgaeUri(Uri.parse(data.getStringExtra("updImg")));
+
+            //editDetails= getIntent().getParcelableExtra("updatedBean");
+            //Log.i("uName","@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+editDetails.getuName());
+            dbHandler.updateContact(editDetails);
+            contactAdapter.notifyDataSetChanged();
+
+
+        }
+
+
+@@@Network on main thread exception
+
+   FIX:
+
+   when you hit the server, you doesn't know whether server is UP oR NOT
+   and dont know, in how much the server will respond back
+
+   problem:
+   Then the problem is, application will freeze and doesn't allow to do anything on UI if you are in background thread
+
+   Solution:
+   AsyncTask provides easy use of UI thread
+   -> does the work in a background thread and publishes the result on UI thread
+   -> a helper class designed around Thread and handlers
+   -> Ideal for short operations
+   -> These two methods in AsyncTask are of our use:
+
+        - doInBackground() - Run on a background thread
+        - onPostExecute() - Run on the main thread
+
+   Main Thread also known as UI Thread handles
+   the user interface objects
+
+   Background Thread also known as woker thread can be used to do any task in the backgroud
+
+@@@ For JSON aplication we always need INTERNET PERMISSION, which should be added in MANIFEST File
+
+
+@@@ ctrl+alt+shift+T -> field ----- changes the local variable into globalvariable
+
+@@@ JsonURLFull.java ---> to work on emulator, you need to press menu button on right side of screen to refresh
+
+@@@ how UniversalImageLoader works ??? ====>
+        1) First it checks the Bitmap  in MEMORY cache, the, if it found,
+                a)it will post-process BITMAP
+                b)then display Bitmap
+        2) if NOT, it will search image in DISK cache, then if it finds,
+               a) decode image into Bitmap
+               b) pre-process Bitmap
+               c)cache Bitmap in memory
+        3) If not,
+                a) It will download image
+                b) cache image on disk
+
+So once image is download, it will be in memory or disk.
+No need to download again, when ever request hit the server for image
+
+
+@@@ with <FRAME LOADER>  we can use progress bar or anything to display on any place of the frame layout
+
+
+@@@ jsonMovieImg1 = (ImageView) convertView.findViewById(R.id.jsonMovieImg1);
+Finding the particular "ID" using above methos is too much expensive and flurish for the application
+to reduce the overHead, we use "View Holder" in JsonURLFUll.java file
+
+
+@@@@
+
+Now Android have Fused location provider
+
+The Fused Location Provider intelligently manages the underlying location technology and gives you the best location according to your needs. It simplifies ways for apps to get the user’s current location with improved accuracy and lower power usage
+
+Fused location provider provide three ways to fetch location
+
+1.Last Location: Use when you want to know current location once.
+2.Request Location using Listener: Use when application is on screen / frontend and require continues location.
+3.Request Location using Pending Intent: Use when application in background and require continues location.
+References :https://github.com/kpbird/fused-location-provider-example
+
+
+@@@ Shared Prefrences
+
+ Most Android apps needs  to save data about the application state() so that users progress is not lost.
+
+1)Android SharedPreferences allows us to STORE private primitive application DATA in the form of key-value pair.
+2)Android stores shared preference settings as XML file in shared_prefs folder under DATA/data/[application package] directory. The DATA folder can be obtained by calling Environment.getDataDirectory() (usually it is /data).
+3)SharedPreferences is APPLICATION SPECIFIC, i.e.) the data is lost when you perform one of the options,
+once you uninstall the application
+once you clear application data (through Settings)
+
+
+MODES:
+MODE_PRIVATE: Only your app can access the file
+MODE_WORLD_READABLE: All apps can read the file **
+MODE_WORLD_WRITABLE: All apps can write o the file **
+MODE_MULTI_PROCESS: Multiple processes can modify the same shareed preference file
+** Deprecated in Kitkat
+
+USES:
+
+1) You can check if the user is using the app first time, ask the user to enter some details etc
+2) Check when your app was last updated, when you update by saving time and date in sharepreference
+3) Remeber User login
+4) Remember User settings(like user dont want the portrait mode etc..)
+5) location caching(like you can log user's last position in shared preference)
+
+
+@@@Invisible vs GONE
+
+INVISIBLE:
+This view is invisible, but it still TAKES up SPACE for layout purposes.
+GONE:
+This view is invisible, and it DOESN'T take any space for layout purposes.
+
+
+@@@Internal Storage
+
+saves in internal storage, where other users or apps cannto access
+
+Context.MODE_PRIVATE: cannot be read by others---> Basically, it overrides the previous data in file(text, word etc.)
+Context.MODE_APPEND: keep appending data to the existing content ---> it just appends the previous data
+
+App ------------------->[openFileOutput(string filename,int mode)]------>String to Binary Data------> File System
+
+App <-------------------[openFileInput(string filename,int mode)]<----Binary to String<---- File System
+
+@@@Inter Process Communication
+
+https://www.youtube.com/watch?v=4u-xpB1RFfs&index=170&list=PLonJJ3BVjZW6hYgvtkaWvwAVvOFB7fkLa
+
+Sandbox--- app user Id, process, combined together
+
+1.) Intents
+2.) Messenger
+3.) ContentResolver
+4.) Binder/IBinder
+
+App1 (Stores data from App2) <------------- Same App UserId(sand box) <--------App2
+
+process for accessing app2 data in App1:----
+
+Step1:
+App2 wants to read data from App1, needs installation information of App1
+Get the Package Manger using "getPackageManger()" of Context Class
+PackageManager contains various kinds of information realted to the application pacakges that are
+    currently installed on the device
+Step2:
+call ApplicationInfo getApplicationInfo(String packageName, int flags) of PackageManager
+    to retrieve all of the information about App1
+packageName= package name of app1
+flags= Any combination of GET_META_DATA, GET_SHARED_LIBRARY_FILES, GET_UNINSTALLED_PACKAGES
+    to modify the data returned
+In our case we need GET_META_DATA
+step3:
+ApplicationInfo corresponds to information collected from the AndroidManifest.xml's <application> of app1
+Find the directory containing App1's persistent data using "dataDir" variable of ApplicationInfo
+    which gives location of App1's files
+
+
+@@@Handler
+
+MessageQueue(Message)=====> Looper=======> Handler(handleMessage(), sendMessage())======> sendMessage()===> --->To_ MessageQueue
+
+Looper: loop====> He is like person sitting at office desk, who sends all the messages to handler, from Message Queue
+Handler----> handle the message and send the messages(using different thread of handleMessage() "reference") inside the message Queue
+
+Here the sendMessages()==> messages are again Sent to MESSAGE_QUEUE ====> to_Looper===> to handleMessage()
+
+Handler:---
+1) allows you to send and process Message and Runnable objects associated with
+    a thread's MessaegeQueue
+2) Handler instance is assocaited with a single thread and that threads's
+    message queue
+3) When you create a new handler, it is bound to the thread/message queue of the thread that is
+    creating it
+4) It will deliver message and runnables to that message queue and execute them as they come out
+    of the message queue
+5) Need only one handler object per activity and no need to manually register it.
+6) Your background thread can communicate wit the handle, which will do all of
+    its work on the activities UI thread.
+    example: Update the process bar from the background thread====> get the handler which belogs to main threadn and update
+
+Uses:
+1) to schedule messages and runnables to be executed as some point in the future
+2) to enqueue an action to be performed ona different thread than your own
+
+2 options for communicating with the handler: messages and Runnable objects
+
+
+MultiThreading:
+
+1) If the user moves away from the process, its threads may also be terminated
+2) The thread is important only as long as the process within which it runs is imortant.(i.s the thread should work for few milli seconds to seconds)
+
+
+@@@@
+There are total 3 ways to bind a service with application components
+
+Using IBinder class
+Using Messanger class
+Using AIDL
+
+
+IBinder::
+Android service is a component that is used to perform operations on the background such as playing music, handle network transactions,
+    interacting content providers etc. It doesn't has any UI (user interface).
+The service runs in the background indefinitely even if application is destroyed.
+Moreover, service can be bounded by a component to perform interactivity and inter process communication (IPC).
+
+We need to bind to the Service to start and stop playing a sound clip. We can leave the clip playing in the Service while it is running.
+ It will continue to play even if the activity is paused or destroyed.
+
+ There can be two forms of a service.The lifecycle of service can follow two different paths: started or bound.
+
+ Started
+ Bound
+ 1) Started Service
+ A service is started when component (like activity) calls startService() method, now it runs in the background indefinitely.
+ It is stopped by stopService() method. The service can stop itself by calling the stopSelf() method.
+
+ 2) Bound Service
+ A service is bound when another component (e.g. client) calls bindService() method.
+ The client can unbind the service by calling the unbindService() method.
+
+ The service cannot be stopped until all clients unbind the service.
+

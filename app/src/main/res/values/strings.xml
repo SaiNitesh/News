@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">News</string>
+    <string name="action_settings">Settings</string>
+    <string name="jso_full_refresh">Refresh</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="next">next</string>
+
+    <string name="subActivity">Navigation subActivity</string>
+
+    <string-array name="social">
+        <item>Youtube</item>
+        <item>Twitter</item>
+        <item>Facebook</item>
+        <item>Google+</item>
+
+    </string-array>
+
+
+
+</resources>

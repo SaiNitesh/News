@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="news.nitesh.com.news">
+<uses-permission android:name="android.permission.INTERNET">
+
+</uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.ACCESS_ALL_DOWNLOADS" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED" />
+    <!--Below two are for location services-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--Below is for Network state(wifi/cellular)-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.READ_DATABASE"/>
+    <uses-permission android:name="android.permission.WRITE_DATABASE"/>
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <uses-permission android:name="news.nitesh.com.news.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="news.nitesh.com.news.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="news.nitesh.com.news.MANAGE_DOCUMENTS" />
+    <uses-permission android:name="news.nitesh.com.news.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="news.nitesh.com.news.ACCESS_ALL_DOWNLOADS" />
+    <uses-permission android:name="news.nitesh.com.news.ACCESS_DOWNLOAD_MANAGER_ADVANCED" />
+    <uses-permission android:name="news.nitesh.com.news.READ_DATABASE"/>
+    <uses-permission android:name="news.nitesh.com.news.WRITE_DATABASE"/>
+
+
+
+
+
+    <provider android:name=".Pop"
+        android:authorities="news.nitesh.com.news.Pop"
+        android:exported="true"
+        android:readPermission="news.nitesh.com.news.READ_DATABASE"
+        android:writePermission="news.nitesh.com.news.WRITE_DATABASE"
+
+        />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashScreenActivity"
+                    >  <!-- inside activity
+                    android:screenOrientation="portrait"  android:theme="@style/AppTheme.AppBarOverlay"-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity"
+            >
+
+        </activity>
+        <activity android:name=".MainActivity2"
+           >
+
+        </activity>
+        <activity android:name=".CustomLViewAdapter"
+            >
+
+        </activity>
+
+        <activity android:name=".NewsActive"
+            >
+
+        </activity>
+        <activity android:name=".JsonParse"
+            >
+
+        </activity>
+
+        <activity android:name=".CalculatorActiv"
+            >
+
+        </activity>
+        <activity android:name=".ContactDetails"
+            >
+
+        </activity>
+        <activity android:name=".Pop"
+           android:theme="@style/AppTheme.CustomTheme">
+
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.MyNewsListActivity"
+            >
+        </activity>
+        <activity
+            android:name="news.nitesh.com.news.MyNewsDetailsActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.JsonURLSample"
+            >
+        </activity>
+        <activity
+            android:name="news.nitesh.com.news.JsonURLFull"
+            android:label="@string/jso_full_refresh">
+        </activity>
+        <activity
+            android:name="news.nitesh.com.news.JsonGsonURLFull"
+            android:label="@string/jso_full_refresh">
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.MyNavigationDrawer"
+            android:label="@string/app_name"
+
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.SpinnerActivity"
+            android:label="@string/subActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="news.nitesh.com.news.MyNavigationDrawer"/>
+
+
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.FloatingActionButtonActivity"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.MyParcelable"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.MyParcelableSecond"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.TabsSwipe"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.ImageSliderActivity"
+            >
+        </activity>
+
+
+        <activity
+            android:name="news.nitesh.com.news.RecyclerViewActivity"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.DummyListView"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.CardViewActivity"
+            >
+        </activity>
+        <activity
+            android:name="news.nitesh.com.news.SharedPreferencesActivity"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.SharedPreferencesSecondActivity"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.ShareDataToOtherAppsActivity"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.Handler_Activity"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.DownloadImageActivity"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.PDFRendererActivity"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.ExternalStorageActivityA"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.ExternalStorageActivityB"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.DownloadPDFActivity"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.DownloadManagerActivity"
+            >
+
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name="news.nitesh.com.news.DownloadDemo"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.IBinderClient"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.DataFromWebsite"
+            >
+        </activity>
+
+        <activity
+            android:name="news.nitesh.com.news.DataFromWebsiteWebView"
+            >
+        </activity>
+
+
+
+
+
+    </application>
+
+</manifest>

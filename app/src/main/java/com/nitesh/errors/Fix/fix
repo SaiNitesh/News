@@ -1,0 +1,70 @@
+
+
+ERROR: java.lang.IllegalStateException: Could not execute method for android:onClick
+
+FIX: Need to initialize the view variables
+        Eg:  smallDisplay = (TextView) findViewById(R.id.smallDisplay);
+
+
+
+
+java.lang.RuntimeException: Unable to start activity ComponentInfo{news.nitesh.com.news/news.nitesh.com.news.Pop}:
+                                                            java.lang.NullPointerException: println needs a message
+
+
+FIX: Check the Intent "key" name in POP.java(second activity) with the name in First Actitivity
+
+
+
+@@@@
+java.lang.NullPointerException
+ at news.nitesh.com.news.MyNavigationDrawer$MyAdapter.getView(MyNavigationDrawer.java:288)
+ at android.widget.AbsListView.obtainView(AbsListView.java:2263)
+
+ FIX: alsways check if you are getting correct ID, from layout or
+ if above fix is not the one,
+ then check if you are using  whether "View(convertView)"  to retrive the data
+ eg:(TextView)convertView.findViewById(R.id.headerTextView1);
+
+
+@@@@
+I've tried to change the Android 4.4.2 to Google APIs 4.4.2 in the Build Target
+
+
+
+
+@@@ GOOGLE APPS instllation in GENYMOTION
+You may have solved it by now but I just experienced the same issue. You need to be patient through the error messages,
+ and manage to sign-in to the play store and update Google+. After, you should also get a notification saying you need
+ to update 'Google Play Services', do it as well. It can be annoying with the error message popping all the time but you
+  just have to go through this once :). Reboot the device after and it should work.
+
+
+@@@
+android.os.NetworkOnMainThreadException:
+
+Fix: Use ASYNC like in "GetAddressFromGoogleApi"
+
+
+
+@@@@
+Process: news.nitesh.com.news, PID: 24554
+android.view.InflateException: Binary XML file line #2: Error inflating class <unknown>
+    at news.nitesh.com.news.JsonGsonURLFull$MovieAdapter.getView(JsonGsonURLFull.java:206)
+    Caused by: android.content.res.Resources$NotFoundException: File res/drawable/ripple_bg.xml from drawable resource ID #0x7f0200a9
+
+
+FIX:
+
+Check ripple_bg.xml in drawable,
+pre lollipop versions cant understand    ---> android:color="?android:attr/colorControlHighlight"
+so we need to use ---------------->   android:color="@color/colorHighlight"    instead of "?..."
+
+
+
+@@@
+ java.lang.RuntimeException: Unable to start activity ComponentInfo  :  android.os.NetworkOnMainThreadException
+
+ FIX: Use AsyncTask if you use any network related tasks.
+
+

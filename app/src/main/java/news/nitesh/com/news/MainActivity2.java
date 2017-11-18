@@ -57,6 +57,7 @@ public class MainActivity2 extends Activity {
     Button button36 = null;
     Button button37 = null;
     Button button38 = null;
+    Button button39 = null;
 
     // This is MainActivity2 need to be initialized in "AndroidManifest.xml" if you want to
     // redirect 'to and from' another page
@@ -273,6 +274,15 @@ public class MainActivity2 extends Activity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), DataFromWebsite.class);
+                startActivity(i);
+            }
+        });
+
+        button39 = (Button) findViewById(R.id.b39);
+        button39.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), MainActivity3.class);
                 startActivity(i);
             }
         });

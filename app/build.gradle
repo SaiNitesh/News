@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    //buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "news.nitesh.com.news"
         minSdkVersion 19
@@ -77,5 +77,10 @@ dependencies {
             compile 'com.android.support:support-v13:24.2.0'
             compile 'com.android.support:support-v4:24.2.0'
             */
+
+    // https://mvnrepository.com/artifact/org.khronos/opengl-api
+    //compile group: 'org.khronos', name: 'opengl-api', version: 'gl1.1-android-2.1_r1'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
 }
 apply plugin: 'com.jakewharton.butterknife'

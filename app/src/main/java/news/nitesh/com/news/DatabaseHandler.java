@@ -48,7 +48,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
 
         values.put(KEY_NAME, contact.getuName());
         values.put(KEY_PASSWORD, contact.getUPassword());
-        values.put(KEY_IMAGEURI, contact.getImgaeUri().toString());
+        values.put(KEY_IMAGEURI, contact.getImgaeUri() != null ? contact.getImgaeUri().toString() : null);
 
         db.insert(TABLE_CONTACTS, null, values);
         db.close();

@@ -206,6 +206,13 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/b37"
                 android:text="Web Page" />
+
+            <Button
+                android:id="@+id/b39"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/b38"
+                android:text="3rd PG" />
         </RelativeLayout>
 
     </LinearLayout>

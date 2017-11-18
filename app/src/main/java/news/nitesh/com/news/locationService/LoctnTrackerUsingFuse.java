@@ -5,8 +5,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.location.Address;
 import android.location.Location;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -28,8 +26,7 @@ import org.json.JSONObject;
 import java.text.DateFormat;
 import java.util.Date;
 
-import news.nitesh.com.news.locationService.GetAddressFromGoogleApi;
-import news.nitesh.com.news.models.LatLongBean;
+import news.nitesh.com.news.Entities.LatLongBean;
 
 /**
  * Created by nitesh on 12/23/2016.

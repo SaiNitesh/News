@@ -1,4 +1,4 @@
-package news.nitesh.com.news.models;
+package news.nitesh.com.news.Entities;
 
 import android.net.Uri;
 import android.os.Parcel;

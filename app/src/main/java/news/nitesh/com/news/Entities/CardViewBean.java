@@ -1,4 +1,4 @@
-package news.nitesh.com.news.models;
+package news.nitesh.com.news.Entities;
 
 /**
  * Created by nitesh on 12/27/2016.

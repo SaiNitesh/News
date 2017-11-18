@@ -1,4 +1,4 @@
-package news.nitesh.com.news.models;
+package news.nitesh.com.news.Entities;
 
 import com.google.gson.annotations.SerializedName;
 
